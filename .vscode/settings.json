@@ -1,0 +1,11 @@
+{
+  "python.pythonPath": "/Users/apple/code/spiders/.venv/bin/python",
+  "python.autoComplete.extraPaths": [
+    "/Users/apple/code/spiders/.venv/lib/python3.7",
+    "/Users/apple/code/spiders/.venv/lib/python3.7/site-packages"
+  ],
+  "python.venvFolders": ["envs", ".pyenv", ".direnv", ".venv"],
+  "python.venvPath": "/Users/apple/code/spiders/.venv",
+  "python.linting.flake8Enabled": true,
+  "python.linting.pylintEnabled": false
+}
