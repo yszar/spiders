@@ -96,8 +96,8 @@ HTTPCACHE_DIR = 'httpcache'
 HTTPCACHE_IGNORE_HTTP_CODES = []
 HTTPCACHE_STORAGE = 'scrapy.extensions.httpcache.FilesystemCacheStorage'
 
-MYSQL_HOSTS = '39.107.81.83'
+MYSQL_HOSTS = ''
 MYSQL_USER = 'ROOT'
-MYSQL_PASSWORD = 'Andylau1987212!'
+MYSQL_PASSWORD = ''
 MYSQL_PORT = '3306'
 MYSQL_DB = 'spiders'

@@ -7,9 +7,9 @@ import pymysql
 # MYSQL_PASSWORD = settings.MYSQL_PASSWORD
 # MYSQL_PORT = settings.MYSQL_PORT
 # MYSQL_DB = settings.MYSQL_DB
-MYSQL_HOSTS = '39.107.81.83'
+MYSQL_HOSTS = ''
 MYSQL_USER = 'root'
-MYSQL_PASSWORD = 'Andylau1987212!'
+MYSQL_PASSWORD = ''
 MYSQL_PORT = '3306'
 MYSQL_DB = 'spiders'
 
