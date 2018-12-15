@@ -1,0 +1,12 @@
+Server: nginx
+Date: Fri, 14 Dec 2018 03:58:57 GMT
+Content-Type: text/html
+Vary: Accept-Encoding
+Requesturl: api.tuan.tao.fang.com/channel/getprojbynewcode?newcode=1315721813&isPreview=0&aid=0
+Debug-Res-143398: ''
+Cache-Control: max-age=43200
+Expires: Fri, 14 Dec 2018 15:57:33 GMT
+X-Ua-Compatible: IE=EmulateIE7
+X-Ua-Compatible: IE=EmulateIE7
+Content-Encoding: gzip
+X-Cache: HIT from xg-wn-hc02.light.soufun.com

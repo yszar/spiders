@@ -13,7 +13,7 @@ BOT_NAME = 'fj_ftx'
 
 SPIDER_MODULES = ['fj_ftx.spiders']
 NEWSPIDER_MODULE = 'fj_ftx.spiders'
-
+ROBOTSTXT_OBEY = False
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 #USER_AGENT = 'fj_ftx (+http://www.yourdomain.com)'
 
@@ -55,6 +55,10 @@ ROBOTSTXT_OBEY = True
 #    'fj_ftx.middlewares.FjFtxDownloaderMiddleware': 543,
 #}
 
+DOWNLOADER_MIDDLEWARES = {
+   'fj_ftx.middlewares.UserAgentDownloadMiddleware': 543,
+}
+
 # Enable or disable extensions
 # See https://doc.scrapy.org/en/latest/topics/extensions.html
 #EXTENSIONS = {
@@ -66,6 +70,10 @@ ROBOTSTXT_OBEY = True
 #ITEM_PIPELINES = {
 #    'fj_ftx.pipelines.FjFtxPipeline': 300,
 #}
+
+ITEM_PIPELINES = {
+    'fj_ftx.mysqlpiplines.piplines.FtxPipeline': 1,
+}
 
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See https://doc.scrapy.org/en/latest/topics/autothrottle.html
@@ -87,3 +95,9 @@ HTTPCACHE_EXPIRATION_SECS = 0
 HTTPCACHE_DIR = 'httpcache'
 HTTPCACHE_IGNORE_HTTP_CODES = []
 HTTPCACHE_STORAGE = 'scrapy.extensions.httpcache.FilesystemCacheStorage'
+
+MYSQL_HOSTS = '39.107.81.83'
+MYSQL_USER = 'ROOT'
+MYSQL_PASSWORD = 'Andylau1987212!'
+MYSQL_PORT = '3306'
+MYSQL_DB = 'spiders'

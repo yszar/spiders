@@ -1,0 +1,13 @@
+Server: nginx
+Date: Fri, 14 Dec 2018 16:26:49 GMT
+Content-Type: text/html
+Vary: Accept-Encoding
+Set-Cookie: city=hebi; expires=Fri, 21-Dec-2018 05:15:21 GMT; Max-Age=604800; path=/; domain=fang.com
+Requesturl: api.tuan.tao.fang.com/channel/getprojbynewcode?newcode=2515786511&isPreview=0&aid=0
+Debug-Res-738193: ''
+Cache-Control: max-age=43200
+Expires: Fri, 14 Dec 2018 17:15:24 GMT
+X-Ua-Compatible: IE=EmulateIE7
+X-Ua-Compatible: IE=EmulateIE7
+Content-Encoding: gzip
+X-Cache: HIT from xg-wn-hc01.light.soufun.com

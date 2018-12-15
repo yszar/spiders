@@ -1,0 +1,11 @@
+Server: nginx
+Date: Thu, 13 Dec 2018 16:34:20 GMT
+Content-Type: text/html
+Vary: Accept-Encoding
+X-Powered-By: PHP/5.6.17
+Debug-Res-419656: array ( 0 => array ( 'title' => ' 12月16日看房团到访即送温泉套票 ', 'linkurl' => ' http://adshow.fang.com/release/clickredirect?z=fang&la=0&si=61&cg=0&c=6998&ci=116569&or=35782&l=0&bg=0&b=1184948&u=http://fz.newhouse.fang.com/house/kanfangtuan.htm ', ),)
+Cache-Control: max-age=3600
+Expires: Thu, 13 Dec 2018 16:39:46 GMT
+X-Ua-Compatible: IE=EmulateIE7
+Content-Encoding: gzip
+X-Cache: HIT from dzc-wn-hc03.light.soufun.com

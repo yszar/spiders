@@ -1,0 +1,12 @@
+Server: nginx
+Date: Fri, 14 Dec 2018 16:26:55 GMT
+Content-Type: text/html
+Vary: Accept-Encoding
+X-Powered-By: PHP/5.6.17
+Requesturl: api.tuan.tao.fang.com/channel/getprojbynewcode?newcode=2625185610&isPreview=0&aid=0
+Debug-Res-942152: ''
+Cache-Control: max-age=43200
+Expires: Fri, 14 Dec 2018 20:32:13 GMT
+X-Ua-Compatible: IE=EmulateIE7
+Content-Encoding: gzip
+X-Cache: HIT from dzc-wn-hc08.light.soufun.com

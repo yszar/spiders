@@ -1,0 +1,13 @@
+Server: nginx
+Date: Fri, 14 Dec 2018 03:59:54 GMT
+Content-Type: text/html
+Vary: Accept-Encoding
+X-Powered-By: PHP/5.6.17
+Set-Cookie: city=yili; expires=Fri, 21-Dec-2018 03:31:59 GMT; Max-Age=604800; path=/; domain=fang.com
+Requesturl: api.tuan.tao.fang.com/channel/getprojbynewcode?newcode=4019125824&isPreview=0&aid=0
+Debug-Res-671947: ''
+Cache-Control: max-age=43200
+Expires: Fri, 14 Dec 2018 15:32:01 GMT
+X-Ua-Compatible: IE=EmulateIE7
+Content-Encoding: gzip
+X-Cache: HIT from dzc-wn-hc03.light.soufun.com

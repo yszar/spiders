@@ -1,0 +1,6 @@
+Referer: http://loudi.newhouse.fang.com/house/s/
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en
+User-Agent: Scrapy/1.5.1 (+https://scrapy.org)
+Accept-Encoding: gzip,deflate
+Cookie: new_search_uid=19b4f9856566970656629a64ad6e3eb5; city=dazu

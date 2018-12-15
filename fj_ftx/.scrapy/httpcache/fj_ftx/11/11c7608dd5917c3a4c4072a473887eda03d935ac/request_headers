@@ -1,0 +1,6 @@
+Referer: http://dingxi.newhouse.fang.com/house/s/
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en
+User-Agent: Scrapy/1.5.1 (+https://scrapy.org)
+Accept-Encoding: gzip,deflate
+Cookie: new_search_uid=8eae47590e04e128c612f48c5ba3479a; city=xiuwen

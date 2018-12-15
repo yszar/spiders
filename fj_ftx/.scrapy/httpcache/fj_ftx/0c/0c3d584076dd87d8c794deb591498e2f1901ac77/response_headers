@@ -1,0 +1,11 @@
+Server: nginx
+Date: Thu, 13 Dec 2018 16:34:14 GMT
+Content-Type: text/html
+Vary: Accept-Encoding
+X-Powered-By: PHP/5.6.17
+Debug-Res-943153: array ( 0 => array ( 'title' => ' 总价100万起 双地铁 一线江景 跃式空间 ', 'linkurl' => ' http://adshow.fang.com/release/clickredirect?z=fang&la=0&si=68&cg=0&c=9159&ci=116988&or=0&l=0&bg=0&b=1136222&u=http://jinshadaduhuibl.fang.com/ ', ),)
+Cache-Control: max-age=3600
+Expires: Thu, 13 Dec 2018 17:01:16 GMT
+X-Ua-Compatible: IE=EmulateIE7
+Content-Encoding: gzip
+X-Cache: HIT from dzc-wn-hc08.light.soufun.com

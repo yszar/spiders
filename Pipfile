@@ -50,6 +50,8 @@ Twisted = "==18.9.0"
 "zope.interface" = "==4.6.0"
 "bs4" = "*"
 "beautifulsoup4" = "*"
+"html5lib" = "*"
+pymysql = "*"
 
 [requires]
 python_version = "3.6"

@@ -1,0 +1,13 @@
+Server: nginx
+Date: Thu, 13 Dec 2018 14:34:15 GMT
+Content-Type: text/html
+Vary: Accept-Encoding
+X-Powered-By: PHP/5.6.17
+Set-Cookie: new_search_uid=8eae47590e04e128c612f48c5ba3479a; expires=Wed, 13-Mar-2019 14:34:15 GMT; Max-Age=7776000; path=/; domain=fang.com
+Set-Cookie: city=xiuwen; expires=Thu, 20-Dec-2018 14:34:15 GMT; Max-Age=604800; path=/; domain=fang.com
+Debug-Res-362846: ''
+Cache-Control: max-age=3600
+Expires: Thu, 13 Dec 2018 15:34:15 GMT
+X-Ua-Compatible: IE=EmulateIE7
+Content-Encoding: gzip
+X-Cache: EXPIRED from dzc-wn-hc08.light.soufun.com
