@@ -56,3 +56,4 @@ fabric.properties
 .diea/
 .venv/
 .vscode/
+httpcache/
