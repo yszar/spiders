@@ -10,7 +10,7 @@ import pymysql
 MYSQL_HOSTS = 'cdb-4sj903z8.bj.tencentcdb.com'
 MYSQL_USER = 'root'
 MYSQL_PASSWORD = 'andylau1987212'
-MYSQL_PORT = '10012'
+MYSQL_PORT = 10012
 MYSQL_DB = 'spiders'
 
 conn = pymysql.connect(host=MYSQL_HOSTS, user=MYSQL_USER, passwd=MYSQL_PASSWORD,
