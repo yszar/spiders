@@ -14,7 +14,7 @@ MYSQL_PORT = '10012'
 MYSQL_DB = 'spiders'
 
 conn = pymysql.connect(host=MYSQL_HOSTS, user=MYSQL_USER, passwd=MYSQL_PASSWORD,
-                       db=MYSQL_DB, charset='utf8')
+                       db=MYSQL_DB, port=MYSQL_PORT, charset='utf8')
 cursor = conn.cursor()
 
 
