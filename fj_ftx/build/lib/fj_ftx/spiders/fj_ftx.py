@@ -3,7 +3,8 @@ import scrapy
 from bs4 import BeautifulSoup
 from scrapy.http import Request
 from fj_ftx.items import FjFtxItem
-
+import sys
+sys.setrecursionlimit(1000000)
 
 class FangTianXia(scrapy.Spider):
     name = 'fj_ftx'
