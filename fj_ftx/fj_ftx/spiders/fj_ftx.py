@@ -1,7 +1,7 @@
 import re
 import scrapy
-from bs4 import BeautifulSoup
-from scrapy.http import Request
+# from bs4 import BeautifulSoup
+# from scrapy.http import Request
 from fj_ftx.items import FjFtxItem
 import sys
 
@@ -138,7 +138,7 @@ class FangTianXia(scrapy.Spider):
                 if total_price_t is None:
                     total_price = '无'
                 else:
-                    total_price = re.search(r'：(.*)万', total_price_t)
+                    total_price = re.search(r'：(.*)万', total_price_t).group(1)
                 household_rating = dl.xpath(
                     './/span[@class="f18 red01"]/text()').get()
                 if household_rating is None:

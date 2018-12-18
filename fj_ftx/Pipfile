@@ -52,6 +52,8 @@ Twisted = "==18.9.0"
 "beautifulsoup4" = "*"
 "html5lib" = "*"
 pymysql = "*"
+shub = "*"
+"urllib3" = "==1.23"
 
 [requires]
 python_version = "3.6"
