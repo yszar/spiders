@@ -73,7 +73,7 @@ class FangTianXia(scrapy.Spider):
             max_page = max(
                 list(map(int, re.findall(r'/house/s/b9(\d+)', str(a_url)))))
             for url_num in range(max_page):
-                url = response.url + 'b' + str(url_num + 1) + '/'
+                url = response.url + 'b9' + str(url_num + 1) + '/'
                 yield scrapy.Request(url=url,
                                      callback=self.parse_house,
                                      meta={'info': (province, city)})

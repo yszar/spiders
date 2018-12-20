@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Scrapy settings for fj_ftx project
+# Scrapy settings for wdzj project
 #
 # For simplicity, this file contains only settings considered important or
 # commonly used. You can find more settings consulting the documentation:
@@ -9,15 +9,22 @@
 #     https://doc.scrapy.org/en/latest/topics/downloader-middleware.html
 #     https://doc.scrapy.org/en/latest/topics/spider-middleware.html
 
-BOT_NAME = 'fj_ftx'
+BOT_NAME = 'wdzj'
 
-SPIDER_MODULES = ['fj_ftx.spiders']
-NEWSPIDER_MODULE = 'fj_ftx.spiders'
+SPIDER_MODULES = ['wdzj.spiders']
+NEWSPIDER_MODULE = 'wdzj.spiders'
+
+
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
-#USER_AGENT = 'fj_ftx (+http://www.yourdomain.com)'
+#USER_AGENT = 'wdzj (+http://www.yourdomain.com)'
 
 # Obey robots.txt rules
 ROBOTSTXT_OBEY = False
+
+
+ITEM_PIPELINES = {
+    'wdzj.mysqlpiplines.piplines.WdzjPipeline': 1,
+}
 
 # Configure maximum concurrent requests performed by Scrapy (default: 16)
 #CONCURRENT_REQUESTS = 32
@@ -45,18 +52,14 @@ ROBOTSTXT_OBEY = False
 # Enable or disable spider middlewares
 # See https://doc.scrapy.org/en/latest/topics/spider-middleware.html
 #SPIDER_MIDDLEWARES = {
-#    'fj_ftx.middlewares.FjFtxSpiderMiddleware': 543,
+#    'wdzj.middlewares.WdzjSpiderMiddleware': 543,
 #}
 
 # Enable or disable downloader middlewares
 # See https://doc.scrapy.org/en/latest/topics/downloader-middleware.html
 #DOWNLOADER_MIDDLEWARES = {
-#    'fj_ftx.middlewares.FjFtxDownloaderMiddleware': 543,
+#    'wdzj.middlewares.WdzjDownloaderMiddleware': 543,
 #}
-
-DOWNLOADER_MIDDLEWARES = {
-   'fj_ftx.middlewares.UserAgentDownloadMiddleware': 543,
-}
 
 # Enable or disable extensions
 # See https://doc.scrapy.org/en/latest/topics/extensions.html
@@ -67,12 +70,8 @@ DOWNLOADER_MIDDLEWARES = {
 # Configure item pipelines
 # See https://doc.scrapy.org/en/latest/topics/item-pipeline.html
 #ITEM_PIPELINES = {
-#    'fj_ftx.pipelines.FjFtxPipeline': 300,
+#    'wdzj.pipelines.WdzjPipeline': 300,
 #}
-
-ITEM_PIPELINES = {
-    'fj_ftx.mysqlpiplines.piplines.FtxPipeline': 1,
-}
 
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See https://doc.scrapy.org/en/latest/topics/autothrottle.html
@@ -89,6 +88,11 @@ ITEM_PIPELINES = {
 
 # Enable and configure HTTP caching (disabled by default)
 # See https://doc.scrapy.org/en/latest/topics/downloader-middleware.html#httpcache-middleware-settings
+#HTTPCACHE_ENABLED = True
+#HTTPCACHE_EXPIRATION_SECS = 0
+#HTTPCACHE_DIR = 'httpcache'
+#HTTPCACHE_IGNORE_HTTP_CODES = []
+#HTTPCACHE_STORAGE = 'scrapy.extensions.httpcache.FilesystemCacheStorage'
 HTTPCACHE_ENABLED = True
 HTTPCACHE_EXPIRATION_SECS = 0
 HTTPCACHE_DIR = 'httpcache'
