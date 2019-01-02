@@ -4,13 +4,16 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-pymysql = "==0.9.2"
 scrapy = "*"
-shub = "*"
+pymysql = "*"
+requests = "*"
 pipenv = "*"
+shub = "*"
 "urllib3" = "==1.23"
+scrapyd-client = "*"
+pyopenssl = "*"
 
 [dev-packages]
 
 [requires]
-python_version = "3.7"
+python_version = "3.6"

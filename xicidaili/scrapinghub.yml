@@ -1,0 +1,5 @@
+projects:
+    default: 365438  # your-project-id为项目id
+stacks:
+    default: scrapy:1.5-py3 # 这个注意，如果是python2.7 则写成scrapy:1.1
+requirements_file: Pipfile  #第三方库时引用

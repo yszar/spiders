@@ -33,12 +33,53 @@ class UserAgentDownloadMiddleware(object):
         "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:41.0) Gecko/20100101 Firefox/41.0"
     ]
 
-    def process_request(self,request,spider):
+    def process_request(self, request, spider):
         user_agent = random.choice(self.USER_AGENTS)
         request.headers['User-Agent'] = user_agent
 
 
-class WdzjSpiderMiddleware(object):
+class ProxyMiddleware(object):
+    def process_request(self, request, spider):
+        # 代理服务器
+        # proxyServer = "http://transfer.mogumiao.com:9001"
+        appkey = "cXRBeU5VRzVxdG1VU1dPdjoyR3NxSGJhZzhTbFhldFVv"
+        # appkey为你订单的key
+        proxyAuth = "Basic " + appkey
+        if request.url.startswith("http://"):
+            request.meta[
+                'proxy'] = "http://transfer.mogumiao.com:9001"  # http代理
+        elif request.url.startswith("https://"):
+            request.meta['proxy'] = "https://transfer.mogumiao.com:9001"
+        # request.meta["proxy"] = proxyServer
+        request.headers["Authorization"] = proxyAuth
+
+    def process_response(self, request, response, spider):
+        if response.status != 200:
+            # proxy = 'http://127.0.0.1:8087'
+            # print("this is response ip:" + proxy)
+            # 对当前reque加上代理
+            if request.url.startswith("http://"):
+                request.meta[
+                    'proxy'] = "http://transfer.mogumiao.com:9001"  # http代理
+            elif request.url.startswith("https://"):
+                request.meta['proxy'] = "https://transfer.mogumiao.com:9001"
+            # request.meta['proxy'] = proxy
+            return request
+        return response
+
+    def process_exception(self, request, exception, spider):
+        # 出现异常时（超时）使用代理
+        print("\n出现异常，正在使用代理重试....\n")
+        proxy = 'http://127.0.0.1:8087'
+        if request.url.startswith("http://"):
+            request.meta[
+                'proxy'] = "http://transfer.mogumiao.com:9001"  # http代理
+        elif request.url.startswith("https://"):
+            request.meta['proxy'] = "https://transfer.mogumiao.com:9001"
+        return request
+
+
+class XiechengSpiderMiddleware(object):
     # Not all methods need to be defined. If a method is not defined,
     # scrapy acts as if the spider middleware does not modify the
     # passed objects.
@@ -86,7 +127,7 @@ class WdzjSpiderMiddleware(object):
         spider.logger.info('Spider opened: %s' % spider.name)
 
 
-class WdzjDownloaderMiddleware(object):
+class XiechengDownloaderMiddleware(object):
     # Not all methods need to be defined. If a method is not defined,
     # scrapy acts as if the downloader middleware does not modify the
     # passed objects.
