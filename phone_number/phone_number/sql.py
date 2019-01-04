@@ -1,4 +1,5 @@
 import pymysql
+import logging
 import requests
 
 # from fj_ftx import settings
@@ -22,13 +23,16 @@ cursor = conn.cursor()
 class WubaSql:
 
     @classmethod
-    def insert_ftx(cls, province, city, title, name, infoid, phone_num, date, source):
-        sql = "INSERT INTO wuba (province, city, title, name, infoid, phone_num, date, source) VALUES(%s,%s,%s,%s,%s,%s,%s,%s)"
-        cursor.execute(sql, (province, city, title, name, infoid, phone_num, date, source))
-        conn.commit()
+    def insert_ftx(cls, city, community, title, name, phone_num, date):
+        sql = "INSERT INTO baixing (city,community, title, name, phone_num, date) VALUES(%s,%s,%s,%s,%s,%s)"
+        try:
+            cursor.execute(sql, (city, community, title, name, phone_num, date))
+            conn.commit()
+        except Exception as error:
+            logging.log(1, error)
 
-    @classmethod
-    def select_name(cls, phone_num):
-        sql = "SELECT EXISTS(SELECT 1 FROM wuba WHERE phone_num=%s)"
-        cursor.execute(sql, phone_num)
-        return cursor.fetchall()[0]
+    # @classmethod
+    # def select_name(cls, phone_num):
+    #     sql = "SELECT EXISTS(SELECT 1 FROM baixing WHERE phone_num=%s)"
+    #     cursor.execute(sql, phone_num)
+    #     return cursor.fetchall()[0]

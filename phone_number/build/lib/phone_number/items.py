@@ -17,14 +17,15 @@ class PhoneNumberItem(scrapy.Item):
 
 
 class WubaItem(scrapy.Item):
-    province = scrapy.Field()       # 省
-    city = scrapy.Field()           # 市
+    # province = scrapy.Field()       # 省
+    city = scrapy.Field()
+    community = scrapy.Field()  # 市
     phone_num = scrapy.Field()      # 电话号码
     name = scrapy.Field()           # 姓名
-    infoid = scrapy.Field()         # infoID
-    date = scrapy.Field()           # 发布时间
+    # infoid = scrapy.Field()         # infoID
     title = scrapy.Field()          # 标题
-    source = scrapy.Field()
+    date = scrapy.Field()           # 发布时间
+    # source = scrapy.Field()
     # region = scrapy.Field()         # 区域
     # rental_type = scrapy.Field()    # 租赁形式
     # building = scrapy.Field()       # 楼院

@@ -17,19 +17,20 @@ class PhoneNumberPipeline(object):
 class WubaPipeline(object):
     def process_item(self, item, spider):
         if isinstance(item, WubaItem):
-            phone_num = item['phone_num']
-            ret = WubaSql.select_name(phone_num)
-            if ret[0] == 1:
-                return print('已经存在')
-            else:
-                province = item['province']  # 省
-                city = item['city']  # 市
-                phone_num = item['phone_num']  # 电话号码
-                name = item['name']  # 姓名
-                title = item['title']  # 标题
-                infoid = item['infoid']  # infoID
-                date = item['date']
-                source = item['source']
-                WubaSql.insert_ftx(province, city, name, title, infoid,
-                                   phone_num, date, source)
-                return item
+            # phone_num = item['phone_num']
+            # ret = WubaSql.select_name(phone_num)
+            # if ret[0] == 1:
+            #     return print('已经存在')
+            # else:
+            # province = item['province']  # 省
+            city = item['city']  # 市
+            community = item['community']
+            title = item['title']  # 标题
+            name = item['name']  # 姓名
+            phone_num = item['phone_num']  # 电话号码
+            # infoid = item['infoid']  # infoID
+            date = item['date']
+            # source = item['source']
+            WubaSql.insert_ftx(city, community, title, name, phone_num,
+                               date)
+            return item

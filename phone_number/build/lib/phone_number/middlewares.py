@@ -10,6 +10,7 @@ from scrapy import signals
 import random
 from scrapy.downloadermiddlewares.redirect import RedirectMiddleware
 
+
 class UserAgentDownloadMiddleware(object):
     USER_AGENTS = [
         # "58tongcheng/8.14.1 (iPhone; iOS 12.1.2; Scale/2.00)",
@@ -49,7 +50,7 @@ class ProxyMiddleware(object):
     def process_request(self, request, spider):
         # 代理服务器
         # proxyServer = "http://transfer.mogumiao.com:9001"
-        appkey = "SFNjaENsekF0UXowS0pWNjowVVFjTWpzQVZxY25zMGNj"
+        appkey = "UmxlUnJlS3A1S0FTdUxyaTpYWHNudExxcWNKV0h0b0hR"
         # appkey为你订单的key
         proxyAuth = "Basic " + appkey
         if request.url.startswith("http://"):
@@ -60,64 +61,64 @@ class ProxyMiddleware(object):
         request.headers["Authorization"] = proxyAuth
 
 
-class RandomProxyMiddleware(object):
-    MYSQL_HOSTS = 'cdb-4sj903z8.bj.tencentcdb.com'
-    MYSQL_USER = 'root'
-    MYSQL_PASSWORD = 'andylau1987212'
-    MYSQL_PORT = 10012
-    MYSQL_DB = 'spiders'
-
-    conn = pymysql.connect(host=MYSQL_HOSTS, user=MYSQL_USER,
-                           passwd=MYSQL_PASSWORD,
-                           db=MYSQL_DB, port=MYSQL_PORT, charset='utf8')
-    cursor = conn.cursor()
-
-    def delete_ip(self, url):
-        # 从数据库中删除无效的ip
-        delete_sql = "delete from ip where url='{0}'".format(url)
-        self.cursor.execute(delete_sql)
-        self.conn.commit()
-        return True
-
-    def judge_ip(self, url):
-        # url = url.lower()
-        # 判断ip是否可用，如果通过代理ip访问百度，返回code200则说明可用
-        # 若不可用则从数据库中删除
-        try:
-            # 设置代理链接百度  如果状态码为200 则表示该代理可以使用 然后交给流水线处理
-            testurl = {'http': url}
-            resp = requests.get('http://www.baidu.com', proxies=testurl,
-                                timeout=1)
-        except Exception as e:
-            print('fail %s' % url)
-            self.delete_ip(url)
-            return False
-        else:
-            code = resp.status_code
-            if code >= 200 and code < 300:
-                print('success %s' % url)
-                return True
-            else:
-                print('fail %s' % url)
-                self.delete_ip(url)
-                return False
-
-    def effective_ip(self):
-        sql = "SELECT url FROM ip ORDER BY RAND() LIMIT 1"
-        self.cursor.execute(sql)
-        results_t = self.cursor.fetchall()
-        results = results_t[0][0].lower()
-        ip_re = self.judge_ip(results)
-        if ip_re:
-            # return Sql.get_ip()[0][0]
-            return results
-        else:
-            return self.effective_ip()
-    # 动态设置ip代理
-    def process_request(self, request, spider):
-        proxy_ip = self.effective_ip()
-        print('using ip proxy:', proxy_ip)
-        request.meta["proxy"] = proxy_ip
+# class RandomProxyMiddleware(object):
+#     MYSQL_HOSTS = 'cdb-4sj903z8.bj.tencentcdb.com'
+#     MYSQL_USER = 'root'
+#     MYSQL_PASSWORD = 'andylau1987212'
+#     MYSQL_PORT = 10012
+#     MYSQL_DB = 'spiders'
+#
+#     conn = pymysql.connect(host=MYSQL_HOSTS, user=MYSQL_USER,
+#                            passwd=MYSQL_PASSWORD,
+#                            db=MYSQL_DB, port=MYSQL_PORT, charset='utf8')
+#     cursor = conn.cursor()
+#
+#     def delete_ip(self, url):
+#         # 从数据库中删除无效的ip
+#         delete_sql = "delete from ip where url='{0}'".format(url)
+#         self.cursor.execute(delete_sql)
+#         self.conn.commit()
+#         return True
+#
+#     def judge_ip(self, url):
+#         # url = url.lower()
+#         # 判断ip是否可用，如果通过代理ip访问百度，返回code200则说明可用
+#         # 若不可用则从数据库中删除
+#         try:
+#             # 设置代理链接百度  如果状态码为200 则表示该代理可以使用 然后交给流水线处理
+#             testurl = {'http': url}
+#             resp = requests.get('http://www.baidu.com', proxies=testurl,
+#                                 timeout=1)
+#         except Exception as e:
+#             print('fail %s' % url)
+#             self.delete_ip(url)
+#             return False
+#         else:
+#             code = resp.status_code
+#             if code >= 200 and code < 300:
+#                 print('success %s' % url)
+#                 return True
+#             else:
+#                 print('fail %s' % url)
+#                 self.delete_ip(url)
+#                 return False
+#
+#     def effective_ip(self):
+#         sql = "SELECT url FROM ip ORDER BY RAND() LIMIT 1"
+#         self.cursor.execute(sql)
+#         results_t = self.cursor.fetchall()
+#         results = results_t[0][0].lower()
+#         ip_re = self.judge_ip(results)
+#         if ip_re:
+#             # return Sql.get_ip()[0][0]
+#             return results
+#         else:
+#             return self.effective_ip()
+#     # 动态设置ip代理
+#     def process_request(self, request, spider):
+#         proxy_ip = self.effective_ip()
+#         print('using ip proxy:', proxy_ip)
+#         request.meta["proxy"] = proxy_ip
 
 
 class PhoneNumberRedirectMiddleware(RedirectMiddleware):

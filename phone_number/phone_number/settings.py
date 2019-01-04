@@ -26,13 +26,13 @@ REDIRECT_ENABLED = False
 
 # RANDOMIZE_DOWNLOAD_DELAY = False
 RANDOMIZE_DOWNLOAD_DELAY = False
-DOWNLOAD_DELAY = 1/5.0
-CONCURRENT_REQUESTS_PER_IP = 5
+DOWNLOAD_DELAY = 0.05
+CONCURRENT_REQUESTS_PER_IP = 20
 
 # DOWNLOAD_DELAY = 0
 # CONCURRENT_REQUESTS_PER_IP = 100
 
-CONCURRENT_REQUESTS = 5
+CONCURRENT_REQUESTS = 20
 #
 # CONCURRENT_REQUESTS_PER_DOMAIN = 10
 #
@@ -49,6 +49,7 @@ DOWNLOADER_MIDDLEWARES = {
     # 'phone_number.middlewares.PhoneNumberRedirectMiddleware': 600,
     # 'phone_number.middlewares.RandomProxyMiddleware': 543,
     'phone_number.middlewares.ProxyMiddleware': 543,
+    # 'phone_number.middlewares.IPPOOlS': 543,
     'scrapy.downloadermiddlewares.retry.RetryMiddleware': 544,
 }
 
